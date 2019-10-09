@@ -4,4 +4,11 @@
     <TargetFramework>netcoreapp2.1</TargetFramework>
   </PropertyGroup>
 
+  <ItemGroup>
+    <Folder Include="Model\Classes\" />
+    <Folder Include="Model\Views\" />
+    <Folder Include="Model\Raw\" />
+    <Folder Include="Templates\" />
+  </ItemGroup>
+
 </Project>

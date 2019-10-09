@@ -1,0 +1,24 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>SwalowTest</name>
+    </assembly>
+    <members>
+        <member name="T:SwalowTest.Program">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:SwalowTest.Program.ver">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:SwalowTest.Program.Main(System.String[])">
+            <summary>
+            
+            </summary>
+            <param name="args">ipp</param>
+        </member>
+    </members>
+</doc>
