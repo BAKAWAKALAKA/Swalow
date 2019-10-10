@@ -20,4 +20,4 @@ h2 Methods:
 #### Параметры ####
 |Name|Type|Summary|
 |----|----|-----|
-args   type    
+|args|type|
