@@ -15,7 +15,7 @@ namespace Swalow
         {
             var builder = new StringBuilder();
             path = @"C:\Users\Gamers\source\repos\Swalow\SwalowTest\SwalowTest.xml";
-            var localPath = @"C:\Users\Gamers\source\repos\Swalow\doc";
+            var localPath = @"C:\Users\Gamers\source\repos\Swalow\docs";
             var serializer =new XmlSerializer(typeof(doc));
             doc doc;
             using (Stream reader = new FileStream(path, FileMode.Open))
@@ -28,12 +28,28 @@ namespace Swalow
             }
             if (doc == null) return;
 
+
+            //initilizate defult folder and files(not all but some needed for test)
+            if (!Directory.Exists(localPath + "\\_layouts"))
+            {
+                Directory.CreateDirectory(localPath + "\\" + "_layouts");
+            }
+            if (!File.Exists(localPath + "\\_layouts" + "\\default.html"))
+            {
+                File.Copy(@"C:\Users\Gamers\source\repos\Swalow\Swalow\Templates\default.html", localPath + "\\_layouts" + "\\default.html");
+            }
+
+            if (!File.Exists(localPath+ "\\_config.yml"))
+            {
+                File.Copy(@"C:\Users\Gamers\source\repos\Swalow\Swalow\Templates\_config.yml", localPath+ "\\_config.yml");
+            }
+
             // assembly can be more than just one and can have iearhery structure so 
             // in futere we need consider it
             foreach (var assembly in doc.assembly)
             {
                 //generate assembly forder(and other needed staff) if isn't exisist
-                if (!Directory.Exists(localPath + assembly.name))
+                if (!Directory.Exists(localPath + "\\" + assembly.name))
                 {
                     Directory.CreateDirectory(localPath + "\\" + assembly.name);
                 }

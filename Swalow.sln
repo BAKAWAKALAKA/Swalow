@@ -5,9 +5,7 @@ VisualStudioVersion = 15.0.28010.2003
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Swalow", "Swalow\Swalow.csproj", "{9EE03664-4AD0-47F4-9304-124DE8A11E24}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "doc", "doc", "{00695542-B00F-4D76-8193-9AFDC8C7F8A4}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SwalowTest", "SwalowTest\SwalowTest.csproj", "{C8B97E0C-E24C-468C-A2CF-2B924D54F4C4}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SwalowTest", "SwalowTest\SwalowTest.csproj", "{C8B97E0C-E24C-468C-A2CF-2B924D54F4C4}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
