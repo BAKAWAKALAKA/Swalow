@@ -18,7 +18,15 @@ namespace SwalowTest
         /// <param name="args">ipp</param>
         static void Main(string[] args)
         {
-            Generator.Do("");
+            try
+            {
+                Generator.Do("");
+            }
+            catch (Exception e)
+            {
+
+            }
+            
             Console.WriteLine("Hello World!");
         }
     }

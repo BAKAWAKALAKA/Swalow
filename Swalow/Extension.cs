@@ -10,17 +10,19 @@ namespace Swalow
     {
         public static bool IsAssemblyClass(this member member, string str)
         {
-            return (String.IsNullOrWhiteSpace(member.name)) ? false : new Regex(@"^T:OUR_ASSEMBLY.[^.]*\z").IsMatch(member.name);
+            return (String.IsNullOrWhiteSpace(member.name)) ? false : new Regex($@"^T:{str}\.[^.]*\z").IsMatch(member.name);
         }
 
         public static bool IsClassFeature(this member member, string str)
         {
-            return (String.IsNullOrWhiteSpace(member.name)) ? false : new Regex(@"^T:OUR_ASSEMBLY.[^.]*\z").IsMatch(member.name);
+            str = str.Replace(".", "\\.");
+            return (String.IsNullOrWhiteSpace(member.name)) ? false : new Regex($@"^F:{str}\.[\w|_]*\z").IsMatch(member.name);
         }
 
         public static bool IsClassMethod(this member member, string str)
         {
-            return (String.IsNullOrWhiteSpace(member.name)) ? false : new Regex(@"^T:OUR_ASSEMBLY.[^.]*\z").IsMatch(member.name);
+            str = str.Replace(".","\\.");
+            return (String.IsNullOrWhiteSpace(member.name)) ? false : new Regex($@"^M:{str}\..*\z").IsMatch(member.name);
         }
     }
 }

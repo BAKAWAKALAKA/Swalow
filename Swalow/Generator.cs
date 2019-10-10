@@ -52,19 +52,48 @@ namespace Swalow
                 {
                     builder.Clear();
                     // for summary and somthing other 
-                    var className = Class.name.Replace("T:"+assembly.name,"");
+                    var className = Class.name.Replace("T:"+assembly.name+".","");
 
+                    builder.AppendLine("---");
+                    builder.AppendLine("title: About");
+                    builder.AppendLine("layout: default");
+                    builder.AppendLine("---");
+                    builder.AppendLine($"# Class {className}");
+                    builder.AppendLine($"See the [{assembly.name}](https://github.com/BAKAWAKALAKA/bakawakalaka.github.io)");
+
+                    builder.AppendLine("h2 Summary:");
+                    builder.AppendLine("============");
+
+                    builder.AppendLine(Class.summary);
+
+                    builder.AppendLine("h2 Varibles:");
+                    builder.AppendLine("------------");
 
                     // get all features and varibles of current class
-                    foreach (var features in doc.members.Where(q => q.IsClassFeature(Class.name)))
+                    foreach (var features in doc.members.Where(q => q.IsClassFeature( assembly.name+"."+ className)))
                     {
-
+                        builder.AppendLine($"### {features.name.Replace("F:"+assembly.name + "." + className +".", "")} ###");
+                        builder.AppendLine(features.summary);
                     }
 
+                    builder.AppendLine("------------");
+                    builder.AppendLine("h2 Methods:");
                     // get all methods of current class
-                    foreach (var features in doc.members.Where(q => q.IsClassFeature(Class.name)))
+                    foreach (var methods in doc.members.Where(q => q.IsClassMethod(assembly.name + "." + className)))
                     {
+                        builder.AppendLine($"### {methods.name.Replace("M:" + className + ".", "")} ###");
+                        builder.AppendLine(methods.summary);
+                        builder.AppendLine(" ");
 
+                        builder.AppendLine($"#### Параметры ####");
+                        builder.AppendLine("Name        Type        Summary");
+                        builder.AppendLine("---------- ----------  -----------");
+                        foreach (var param in methods.param)
+                        {
+                            builder.AppendLine($"{param.name.Replace("M:" + className + ".", "")}   type    {param.content}");
+                            builder.AppendLine(" ");
+                        }
+                        builder.AppendLine("---------- ----------  -----------");
                     }
 
                     // generate page or md (i'm not decide yet)
@@ -74,7 +103,7 @@ namespace Swalow
                     // into text then save it in file (maybe something like string.fortmat()?)
 
                     // create viw file
-                    var classFile = localPath + "\\" + assembly.name + "\\" + className;
+                    var classFile = localPath + "\\" + assembly.name + "\\" + className+".md";
                     File.WriteAllText(classFile, builder.ToString());
                 }
             }
