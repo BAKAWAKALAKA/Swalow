@@ -6,19 +6,25 @@
     <members>
         <member name="T:SwalowTest.Program">
             <summary>
-            
+            test class
             </summary>
         </member>
         <member name="F:SwalowTest.Program.ver">
             <summary>
-            
+            test varible
             </summary>
         </member>
         <member name="M:SwalowTest.Program.Main(System.String[])">
             <summary>
-            
+            test method
             </summary>
             <param name="args">ipp</param>
+        </member>
+        <member name="M:SwalowTest.Program.TestMethod">
+            <summary>
+            test 2 method
+            </summary>
+            <returns>test returns</returns>
         </member>
     </members>
 </doc>
