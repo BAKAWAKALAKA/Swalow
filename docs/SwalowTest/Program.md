@@ -24,8 +24,8 @@ test method
  
 #### Параметры ####
 |Name|Type|Summary|
-|---|---|---|
-|args|type||
+|----|----|-------|
+|args|type|
  
 ### TestMethod ###
 
