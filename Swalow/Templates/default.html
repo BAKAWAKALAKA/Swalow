@@ -6,17 +6,41 @@
 	<link rel="stylesheet" type="text/css" href="/css/main.css">
 </head>
 <body>
-	<nav>
-		<ul>
-			<li><a href="/">Home</a></li>
-			<li><a href="/about">About</a></li>
-			<li><a href="/cv">CV</a></li>
-			<li><a href="/blog">Blog</a></li>
-		</ul>
-	</nav>
 	<div class="container">
 
-		{{ content }}
+        <div class="row">
+
+            <!--class main-->
+            <div class="col-sm-8 blog-main">
+                {{ content }}
+            </div><!-- /.blog-main -->
+
+            <div class="col-sm-3 col-sm-offset-1 blog-sidebar">
+                <div class="sidebar-module sidebar-module-inset">
+                    <h4>About</h4>
+                    <p>Etiam porta <em>sem malesuada magna</em> mollis euismod. Cras mattis consectetur purus sit amet fermentum. Aenean lacinia bibendum nulla sed consectetur.</p>
+                </div>
+                <div class="sidebar-module">
+                    <h4>Archives</h4>
+                    <ol class="list-unstyled">
+
+                        <!--links to all assembly classes
+                   <li><a href="#">March 2014</a></li>
+                -->
+                    </ol>
+                </div>
+                <div class="sidebar-module">
+                    <h4>Elsewhere</h4>
+                    <ol class="list-unstyled">
+                        <li><a href="/">Home</a></li>
+                        <li><a href="/about">About</a></li>
+                        <li><a href="/cv">CV</a></li>
+                        <li><a href="/blog">Blog</a></li>
+                    </ol>
+                </div>
+            </div><!-- /.blog-sidebar -->
+
+        </div>
 
 	</div><!-- /.container -->
 	<footer>
@@ -28,3 +52,4 @@
 </body>
 </html>
 © 2019 GitHub, Inc.
+
