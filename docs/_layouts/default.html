@@ -2,6 +2,7 @@
 <html>
 <head>
 	<title>{{ page.title }}</title>
+	 <h2 class="project-tagline">{{ page.description | default: site.description | default: site.github.project_tagline }}</h2>
 	<!-- link to main stylesheet -->
 	<link rel="stylesheet" type="text/css" href="/css/main.css">
 </head>
